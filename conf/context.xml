@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context>
+
+  <!-- Default set of monitored resources -->
+  <WatchedResource>WEB-INF/web.xml</WatchedResource>
+  <Resources cacheMaxSize="102400"/>
+
+  <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+  <!--
+  <Manager pathname="" />
+  -->
+
+  <!-- Uncomment this to enable Comet connection tacking (provides events
+       on session expiration as well as webapp lifecycle) -->
+  <!--
+  <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
+  -->
+
+  <!-- Uncomment this to enable APR library usage -->
+  <!--
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  -->
+
+  <!-- OpenSSL Configuration -->
+  <!--
+  <Listener className="org.apache.catalina.core.AprLifecycleListener"
+            SSLEngine="on"
+            SSLRandomSeed="/dev/urandom"
+            OpenSSLConf="/usr/local/ssl/openssl.cnf"/>
+  -->
+
+</Context>

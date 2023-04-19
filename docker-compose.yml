@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  tomcat:
+    build: .
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
