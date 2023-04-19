@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   tomcat:
     build: .
@@ -6,3 +5,22 @@ services:
       - "8888:8080"
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "8090:80"
+    depends_on:
+      - db

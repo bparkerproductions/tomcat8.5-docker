@@ -1,2 +1,4 @@
 webapps
 conf/tomcat-users.xml
+.env
+db_data
