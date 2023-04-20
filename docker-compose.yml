@@ -2,7 +2,7 @@ services:
   tomcat:
     build: .
     ports:
-      - "8888:8080"
+      - "8080:8080"
     volumes:
       - ./webapps:/usr/local/tomcat/webapps
     depends_on:
@@ -14,6 +14,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
