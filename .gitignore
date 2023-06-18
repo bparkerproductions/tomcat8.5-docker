@@ -1,4 +1,5 @@
-webapps
+# webapps
+webapps/prose-*
 conf/tomcat-users.xml
 .env
 db_data
